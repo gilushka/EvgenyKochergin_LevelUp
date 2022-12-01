@@ -21,12 +21,7 @@ public class CheckLuckyTicket {
         }
 
         //Проверяем, что все символы в номере - цифры
-        if (number.contains("+") || number.contains("-")) {
-            return new AnswerCodes(2, NOT_NUMERIC_SYMBOL);
-        }
-        try {
-            Integer.parseInt(number);
-        } catch (NumberFormatException e) {
+        if (!number.matches("\\d+")) {
             return new AnswerCodes(2, NOT_NUMERIC_SYMBOL);
         }
 

@@ -20,14 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.9.1</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
+            <artifactId>junit-jupiter</artifactId>
             <version>5.9.1</version>
             <scope>test</scope>
         </dependency>
@@ -36,6 +29,9 @@
     <profiles>
         <profile>
             <id>negative-tests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <test.classes>**/NegativeTest.java</test.classes>
             </properties>
@@ -50,9 +46,6 @@
 
         <profile>
             <id>all-tests</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <test.classes>**/*Test.java</test.classes>
             </properties>
